@@ -413,6 +413,121 @@ section {
 }
 
 /* ===================================
+   Before/After Section
+   =================================== */
+.before-after {
+  background-color: var(--color-bg);
+}
+
+.comparison {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .comparison {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--spacing-xl);
+  }
+}
+
+.comparison-column {
+  flex: 1;
+  background-color: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 450px;
+}
+
+.comparison-column.before {
+  border-top: 4px solid #94a3b8;
+}
+
+.comparison-column.after {
+  border-top: 4px solid var(--color-primary);
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.comparison-label {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-sm);
+}
+
+.before .comparison-label {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.after .comparison-label {
+  background-color: var(--color-bg-accent);
+  color: var(--color-primary);
+}
+
+.comparison-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.comparison-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+.before .comparison-list li {
+  color: var(--color-text-light);
+}
+
+.after .comparison-list li {
+  color: var(--color-text);
+}
+
+.comparison-icon {
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.comparison-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  transform: rotate(90deg);
+}
+
+@media (min-width: 1024px) {
+  .comparison-arrow {
+    transform: rotate(0deg);
+  }
+}
+
+/* ===================================
    Services Section
    =================================== */
 .services {
