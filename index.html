@@ -146,109 +146,15 @@
       </div>
 
       <div class="contact-wrapper">
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <!-- Company Name -->
-          <div class="form-group">
-            <label for="company" class="form-label">
-              会社名 <span class="required">必須</span>
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              class="form-input"
-              placeholder="例: 株式会社サンプル"
-              required
-            >
-          </div>
-
-          <!-- Name -->
-          <div class="form-group">
-            <label for="name" class="form-label">
-              お名前 <span class="required">必須</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-input"
-              placeholder="例: 山田 太郎"
-              required
-            >
-          </div>
-
-          <!-- Email -->
-          <div class="form-group">
-            <label for="email" class="form-label">
-              メールアドレス <span class="required">必須</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-input"
-              placeholder="例: yamada@example.com"
-              required
-            >
-          </div>
-
-          <!-- Phone -->
-          <div class="form-group">
-            <label for="phone" class="form-label">
-              電話番号 <span class="optional">任意</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              class="form-input"
-              placeholder="例: 03-1234-5678"
-            >
-          </div>
-
-          <!-- Inquiry Type -->
-          <div class="form-group">
-            <label for="inquiry_type" class="form-label">
-              ご相談内容 <span class="required">必須</span>
-            </label>
-            <select id="inquiry_type" name="inquiry_type" class="form-select" required>
-              <option value="">選択してください</option>
-              <option value="consultation">無料相談の申し込み</option>
-              <option value="question">サービスについての質問</option>
-              <option value="estimate">見積もり依頼</option>
-              <option value="other">その他</option>
-            </select>
-          </div>
-
-          <!-- Message -->
-          <div class="form-group">
-            <label for="message" class="form-label">
-              詳細・ご質問など <span class="optional">任意</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              class="form-textarea"
-              rows="5"
-              placeholder="現在の課題やご質問があればお書きください"
-            ></textarea>
-          </div>
-
-          <!-- Privacy Policy -->
-          <div class="form-group form-checkbox">
-            <input type="checkbox" id="privacy" name="privacy" required>
-            <label for="privacy">
-              <a href="#" target="_blank">プライバシーポリシー</a>に同意する
-            </label>
-          </div>
-
-          <!-- Submit Button -->
-          <div class="form-group form-submit">
-            <button type="submit" class="btn btn-primary btn-large">
-              送信する
-            </button>
-          </div>
-        </form>
+        <div class="google-form-container">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSfjQayAg9aLcyAbk6KfHZU5nsI2VTVzsXzTMBTrz0zsbjOMOw/viewform?embedded=true"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="お問い合わせフォーム"
+          >読み込んでいます…</iframe>
+        </div>
       </div>
     </div>
   </section>
