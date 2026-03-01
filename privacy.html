@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | ロードミント株式会社</title>
+  <meta name="description" content="ロードミント株式会社のプライバシーポリシーです。個人情報の取り扱いについてご説明します。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="https://roadmint.co.jp/" class="logo"><img src="images/roadmint_header.png" alt="RoadMint" height="40"></a>
+      <nav class="nav">
+        <a href="index.html#services" class="nav-link">サービス概要</a>
+        <a href="index.html#contact" class="btn btn-header">お問い合わせ</a>
+      </nav>
+      <button class="nav-toggle" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Privacy Policy -->
+  <section class="policy-page">
+    <div class="container">
+      <h1 class="policy-title">プライバシーポリシー</h1>
+
+      <div class="policy-content">
+        <p>ロードミント株式会社（以下「当社」といいます）は、お客様の個人情報の保護を重要な責務と考え、以下のとおりプライバシーポリシーを定め、適切な取り扱いに努めます。</p>
+
+        <h2>1. 個人情報の取得について</h2>
+        <p>当社は、お問い合わせフォーム等を通じて、以下の個人情報を取得することがあります。</p>
+        <ul>
+          <li>会社名（組織名）</li>
+          <li>お名前</li>
+          <li>メールアドレス</li>
+          <li>電話番号</li>
+          <li>ご相談内容</li>
+          <li>その他お客様が入力された情報</li>
+        </ul>
+
+        <h2>2. 個人情報の利用目的</h2>
+        <p>当社は、取得した個人情報を以下の目的で利用いたします。</p>
+        <ul>
+          <li>お問い合わせへの回答・対応</li>
+          <li>サービスに関するご案内・ご連絡</li>
+          <li>サービスの提供・改善</li>
+          <li>その他上記利用目的に付随する業務</li>
+        </ul>
+
+        <h2>3. 個人情報の第三者提供</h2>
+        <p>当社は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません。</p>
+        <ul>
+          <li>お客様の同意がある場合</li>
+          <li>法令に基づく場合</li>
+          <li>人の生命・身体・財産の保護に必要な場合で、お客様の同意を得ることが困難な場合</li>
+        </ul>
+
+        <h2>4. 個人情報の管理</h2>
+        <p>当社は、お客様の個人情報を正確かつ最新の状態に保つとともに、不正アクセス・紛失・破損・改ざん・漏洩などの防止に努め、適切な安全管理措置を講じます。</p>
+
+        <h2>5. お問い合わせ窓口</h2>
+        <p>個人情報の取り扱いに関するお問い合わせは、以下の窓口までご連絡ください。</p>
+        <div class="policy-contact">
+          <p>ロードミント株式会社</p>
+          <p>所在地：〒242-0019 千葉県千葉市花見川区朝日ケ丘三丁目28番26号</p>
+          <p>お問い合わせ：<a href="https://roadmint.co.jp/contact/">お問い合わせフォーム</a></p>
+        </div>
+
+        <h2>6. プライバシーポリシーの変更</h2>
+        <p>当社は、必要に応じて本ポリシーを変更することがあります。変更後のプライバシーポリシーは、本ページにて公表した時点から効力を生じるものとします。</p>
+
+        <p class="policy-date">制定日：2026年3月1日</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <p class="footer-company">ロードミント株式会社</p>
+          <p class="footer-address">〒242-0019 千葉県千葉市花見川区朝日ケ丘三丁目28番26号</p>
+        </div>
+        <div class="footer-links">
+          <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+      <p class="footer-copyright">
+        &copy; 2026 RoadMint inc. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      navToggle.classList.toggle('active');
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
