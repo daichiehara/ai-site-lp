@@ -201,13 +201,17 @@ img {
 }
 
 .logo {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
 }
 
 .logo:hover {
-  color: var(--color-primary-dark);
+  opacity: 0.8;
 }
 
 .nav {
@@ -303,16 +307,36 @@ img {
    Hero Section
    =================================== */
 .hero {
+  position: relative;
   padding-top: 120px;
   padding-bottom: 80px;
-  background: linear-gradient(135deg, #ffffff 0%, var(--color-bg-light) 50%, var(--color-bg-accent) 100%);
   min-height: 80vh;
   display: flex;
   align-items: center;
+  background-image: url('../images/hero2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.72) 50%, rgba(255, 255, 255, 0.55) 100%);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 650px;
 }
 
 .hero-tagline {
@@ -336,7 +360,7 @@ img {
 
 .hero-description {
   font-size: var(--font-size-lg);
-  color: var(--color-text-light);
+  color: var(--color-text);
   margin-bottom: var(--spacing-xl);
   line-height: var(--line-height-loose);
 }
@@ -350,7 +374,7 @@ img {
 
 .hero-note {
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
 }
 
 @media (min-width: 768px) {
@@ -416,7 +440,35 @@ section {
    Before/After Section
    =================================== */
 .before-after {
-  background-color: var(--color-bg);
+  background: linear-gradient(180deg, var(--color-bg-light) 0%, #e0ecf8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.before-after::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 95, 180, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.before-after .section-title {
+  position: relative;
+}
+
+.before-after .section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 2px;
+  margin: var(--spacing-md) auto 0;
 }
 
 .comparison {
@@ -436,25 +488,54 @@ section {
 
 .comparison-column {
   flex: 1;
-  background-color: #fff;
   border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-2xl) var(--spacing-xl);
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
+  position: relative;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.comparison-column:hover {
+  transform: translateY(-4px);
 }
 
 .comparison-column.before {
-  border-top: 4px solid #94a3b8;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.comparison-column.before:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .comparison-column.after {
-  border-top: 4px solid var(--color-primary);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+  border: 2px solid var(--color-primary-light);
+  box-shadow: 0 8px 30px rgba(26, 95, 180, 0.15);
+}
+
+.comparison-column.after:hover {
+  box-shadow: 0 12px 40px rgba(26, 95, 180, 0.2);
+}
+
+.comparison-column.after::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .comparison-header {
   text-align: center;
   margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .comparison-label {
@@ -462,8 +543,8 @@ section {
   font-size: var(--font-size-xs);
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 4px 12px;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
   border-radius: var(--radius-full);
   margin-bottom: var(--spacing-sm);
 }
@@ -474,8 +555,8 @@ section {
 }
 
 .after .comparison-label {
-  background-color: var(--color-bg-accent);
-  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
 }
 
 .comparison-title {
@@ -487,7 +568,7 @@ section {
 .comparison-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 .comparison-list li {
@@ -506,23 +587,88 @@ section {
   color: var(--color-text);
 }
 
-.comparison-icon {
-  font-size: var(--font-size-xl);
+.comparison-icon-wrap {
   flex-shrink: 0;
-  width: 32px;
-  text-align: center;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.before .comparison-icon-wrap {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.after .comparison-icon-wrap {
+  background: linear-gradient(135deg, var(--color-bg-accent), #dbeafe);
+  border: 1px solid rgba(26, 95, 180, 0.15);
+}
+
+.comparison-icon {
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+.comparison-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.comparison-text-main {
+  font-weight: 500;
+  font-size: var(--font-size-base);
+}
+
+.comparison-text-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.after .comparison-text-main {
+  color: var(--color-heading);
 }
 
 .comparison-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: var(--spacing-sm) 0;
+}
+
+.comparison-arrow-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
   color: var(--color-primary);
+}
+
+.comparison-arrow-label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.comparison-arrow-inner svg {
   transform: rotate(90deg);
 }
 
 @media (min-width: 1024px) {
-  .comparison-arrow {
+  .comparison-arrow-inner {
+    flex-direction: column;
+  }
+
+  .comparison-arrow-inner svg {
     transform: rotate(0deg);
   }
 }
